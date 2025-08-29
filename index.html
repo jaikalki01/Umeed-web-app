@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umeed - World's First LGBTQ+ Matrimony App</title>
+
+    <meta name="description" content="Find your perfect match in the LGBTQ+ community with Umeed - A safe, inclusive matrimony platform" />
+    <meta name="author" content="Umeed Matrimony" />
+
+    <link rel="icon" type="image/png" href="/img/favicon.png" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    
+    <script>
+  // Handle browser back button
+  window.addEventListener("popstate", function (event) {
+    if (document.referrer && document.referrer !== window.location.href) {
+      // Navigate to previous page in your app
+      window.location.href = document.referrer;
+    } else {
+      // If no previous page, stay on current page (prevent closing app)
+      history.pushState(null, null, window.location.href);
+    }
+  });
+
+  // Initialize push state so that back button works inside app
+  history.pushState(null, null, window.location.href);
+</script>
+
+  </body>
+</html>
